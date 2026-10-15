@@ -1,0 +1,656 @@
+[Error: EPERM: operation not permitted, open 'C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\trace'] {
+  errno: -4048,
+  code: 'EPERM',
+  syscall: 'open',
+  path: 'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\.next\\trace'
+}
+The user aborted a request.
+
+Retrying 1/3...
+The user aborted a request.
+
+Retrying 1/3...
+The user aborted a request.
+
+Retrying 1/3...
+The user aborted a request.
+
+Retrying 1/3...
+The user aborted a request.
+
+Retrying 1/3...
+The user aborted a request.
+
+Retrying 1/3...
+The user aborted a request.
+
+Retrying 1/3...
+The user aborted a request.
+
+Retrying 1/3...
+The user aborted a request.
+
+Retrying 1/3...
+The user aborted a request.
+
+Retrying 1/3...
+The user aborted a request.
+
+Retrying 1/3...
+The user aborted a request.
+
+Retrying 1/3...
+The user aborted a request.
+
+Retrying 1/3...
+The user aborted a request.
+
+Retrying 2/3...
+The user aborted a request.
+
+Retrying 2/3...
+The user aborted a request.
+
+Retrying 2/3...
+The user aborted a request.
+
+Retrying 2/3...
+The user aborted a request.
+
+Retrying 2/3...
+The user aborted a request.
+
+Retrying 3/3...
+The user aborted a request.
+
+Retrying 3/3...
+The user aborted a request.
+
+Retrying 3/3...
+AbortError: The user aborted a request.
+    at abort (C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\compiled\node-fetch\index.js:1:65594)
+    at EventTarget.abortAndFinalize (C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\compiled\node-fetch\index.js:1:65814)
+    at [nodejs.internal.kHybridDispatch] (node:internal/event_target:831:20)
+    at EventTarget.dispatchEvent (node:internal/event_target:766:26)
+    at abortSignal (node:internal/abort_controller:370:10)
+    at AbortController.abort (node:internal/abort_controller:392:5)
+    at Timeout.<anonymous> (C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\compiled\@next\font\dist\google\fetch-font-file.js:26:55)
+    at listOnTimeout (node:internal/timers:581:17)
+    at process.processTimers (node:internal/timers:519:7) {
+  type: 'aborted'
+}
+ ⨯ Failed to download `IBM Plex Sans Arabic` from Google Fonts. Using fallback font instead.
+
+Failed to fetch `IBM Plex Sans Arabic` from Google Fonts.}
+AbortError: The user aborted a request.
+    at abort (C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\compiled\node-fetch\index.js:1:65594)
+    at EventTarget.abortAndFinalize (C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\compiled\node-fetch\index.js:1:65814)
+    at [nodejs.internal.kHybridDispatch] (node:internal/event_target:831:20)
+    at EventTarget.dispatchEvent (node:internal/event_target:766:26)
+    at abortSignal (node:internal/abort_controller:370:10)
+    at AbortController.abort (node:internal/abort_controller:392:5)
+    at Timeout.<anonymous> (C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\compiled\@next\font\dist\google\fetch-font-file.js:26:55)
+    at listOnTimeout (node:internal/timers:581:17)
+    at process.processTimers (node:internal/timers:519:7) {
+  type: 'aborted'
+}
+AbortError: The user aborted a request.
+    at abort (C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\compiled\node-fetch\index.js:1:65594)
+    at EventTarget.abortAndFinalize (C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\compiled\node-fetch\index.js:1:65814)
+    at [nodejs.internal.kHybridDispatch] (node:internal/event_target:831:20)
+    at EventTarget.dispatchEvent (node:internal/event_target:766:26)
+    at abortSignal (node:internal/abort_controller:370:10)
+    at AbortController.abort (node:internal/abort_controller:392:5)
+    at Timeout.<anonymous> (C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\compiled\@next\font\dist\google\fetch-font-file.js:26:55)
+    at listOnTimeout (node:internal/timers:581:17)
+    at process.processTimers (node:internal/timers:519:7) {
+  type: 'aborted'
+}
+ ⨯ Failed to download `Inter` from Google Fonts. Using fallback font instead.
+
+Failed to fetch `Inter` from Google Fonts.}
+ ⨯ Error: Your project's URL and Key are required to create a Supabase client!
+
+Check your Supabase project's API settings to find these values
+
+https://supabase.com/dashboard/project/_/settings/api
+    at createClient (./src/lib/supabase/server.ts:11:77)
+    at eval (./src/lib/data/services.ts:16:88)
+    at HomePage (page.tsx:55:74)
+digest: "2492081162"
+ ⨯ Error: Your project's URL and Key are required to create a Supabase client!
+
+Check your Supabase project's API settings to find these values
+
+https://supabase.com/dashboard/project/_/settings/api
+    at createClient (./src/lib/supabase/server.ts:11:77)
+    at eval (./src/lib/data/services.ts:16:88)
+    at HomePage (page.tsx:55:74)
+digest: "2492081162"
+ ⨯ Error: Your project's URL and Key are required to create a Supabase client!
+
+Check your Supabase project's API settings to find these values
+
+https://supabase.com/dashboard/project/_/settings/api
+    at createClient (./src/lib/supabase/server.ts:11:77)
+    at eval (./src/lib/data/services.ts:16:88)
+    at HomePage (page.tsx:55:74)
+digest: "2492081162"
+ ⨯ Error: Your project's URL and Key are required to create a Supabase client!
+
+Check your Supabase project's API settings to find these values
+
+https://supabase.com/dashboard/project/_/settings/api
+    at createClient (./src/lib/supabase/server.ts:11:77)
+    at eval (./src/lib/data/services.ts:16:88)
+    at ServicesPage (services/page.tsx:60:74)
+digest: "1115833562"
+ ⨯ Error: Your project's URL and Key are required to create a Supabase client!
+
+Check your Supabase project's API settings to find these values
+
+https://supabase.com/dashboard/project/_/settings/api
+    at createClient (./src/lib/supabase/server.ts:11:77)
+    at eval (./src/lib/data/services.ts:16:88)
+    at ServicesPage (services/page.tsx:60:74)
+digest: "1115833562"
+ ⨯ Error: Your project's URL and Key are required to create a Supabase client!
+
+Check your Supabase project's API settings to find these values
+
+https://supabase.com/dashboard/project/_/settings/api
+    at createClient (./src/lib/supabase/server.ts:11:77)
+    at eval (./src/lib/data/services.ts:16:88)
+    at HomePage (page.tsx:55:74)
+digest: "558948668"
+ ⨯ Error: Your project's URL and Key are required to create a Supabase client!
+
+Check your Supabase project's API settings to find these values
+
+https://supabase.com/dashboard/project/_/settings/api
+    at createClient (./src/lib/supabase/server.ts:11:77)
+    at eval (./src/lib/data/services.ts:16:88)
+    at HomePage (page.tsx:55:74)
+digest: "2492081162"
+ ⨯ Error: Your project's URL and Key are required to create a Supabase client!
+
+Check your Supabase project's API settings to find these values
+
+https://supabase.com/dashboard/project/_/settings/api
+    at createClient (./src/lib/supabase/server.ts:11:77)
+    at eval (./src/lib/data/services.ts:16:88)
+    at HomePage (page.tsx:55:74)
+digest: "2492081162"
+ ⨯ Error: Your project's URL and Key are required to create a Supabase client!
+
+Check your Supabase project's API settings to find these values
+
+https://supabase.com/dashboard/project/_/settings/api
+    at createClient (./src/lib/supabase/server.ts:11:77)
+    at eval (./src/lib/data/services.ts:16:88)
+    at HomePage (page.tsx:55:74)
+digest: "2492081162"
+ ⨯ Error: Your project's URL and Key are required to create a Supabase client!
+
+Check your Supabase project's API settings to find these values
+
+https://supabase.com/dashboard/project/_/settings/api
+    at createClient (./src/lib/supabase/server.ts:11:77)
+    at eval (./src/lib/data/services.ts:16:88)
+    at HomePage (page.tsx:55:74)
+digest: "2492081162"
+ ⨯ Error: Your project's URL and Key are required to create a Supabase client!
+
+Check your Supabase project's API settings to find these values
+
+https://supabase.com/dashboard/project/_/settings/api
+    at createClient (./src/lib/supabase/server.ts:11:77)
+    at eval (./src/lib/data/services.ts:16:88)
+    at HomePage (page.tsx:55:74)
+digest: "2492081162"
+ ⨯ Error: Your project's URL and Key are required to create a Supabase client!
+
+Check your Supabase project's API settings to find these values
+
+https://supabase.com/dashboard/project/_/settings/api
+    at createClient (./src/lib/supabase/server.ts:11:77)
+    at eval (./src/lib/data/services.ts:16:88)
+    at HomePage (page.tsx:55:74)
+digest: "2492081162"
+ ⨯ Error: Your project's URL and Key are required to create a Supabase client!
+
+Check your Supabase project's API settings to find these values
+
+https://supabase.com/dashboard/project/_/settings/api
+    at createClient (./src/lib/supabase/server.ts:11:77)
+    at eval (./src/lib/data/services.ts:16:88)
+    at HomePage (page.tsx:55:74)
+digest: "2492081162"
+ ⨯ Error: Your project's URL and Key are required to create a Supabase client!
+
+Check your Supabase project's API settings to find these values
+
+https://supabase.com/dashboard/project/_/settings/api
+    at createClient (./src/lib/supabase/server.ts:11:77)
+    at eval (./src/lib/data/services.ts:16:88)
+    at HomePage (page.tsx:55:74)
+digest: "2492081162"
+ ⨯ Error: Your project's URL and Key are required to create a Supabase client!
+
+Check your Supabase project's API settings to find these values
+
+https://supabase.com/dashboard/project/_/settings/api
+    at createClient (./src/lib/supabase/server.ts:11:77)
+    at eval (./src/lib/data/services.ts:16:88)
+    at HomePage (page.tsx:55:74)
+digest: "2492081162"
+ ⨯ Error: Your project's URL and Key are required to create a Supabase client!
+
+Check your Supabase project's API settings to find these values
+
+https://supabase.com/dashboard/project/_/settings/api
+    at createClient (./src/lib/supabase/server.ts:11:77)
+    at eval (./src/lib/data/services.ts:16:88)
+    at HomePage (page.tsx:55:74)
+digest: "2492081162"
+ ⨯ Error: Your project's URL and Key are required to create a Supabase client!
+
+Check your Supabase project's API settings to find these values
+
+https://supabase.com/dashboard/project/_/settings/api
+    at createClient (./src/lib/supabase/server.ts:11:77)
+    at eval (./src/lib/data/services.ts:16:88)
+    at HomePage (page.tsx:55:74)
+digest: "558948668"
+ ⨯ Error: Your project's URL and Key are required to create a Supabase client!
+
+Check your Supabase project's API settings to find these values
+
+https://supabase.com/dashboard/project/_/settings/api
+    at createClient (./src/lib/supabase/server.ts:11:77)
+    at eval (./src/lib/data/services.ts:16:88)
+    at HomePage (page.tsx:55:74)
+digest: "558948668"
+ ⨯ Failed to generate static paths for /[locale]/services:
+Error: ENOENT: no such file or directory, open 'C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\build-manifest.json'
+    at readFileSync (node:fs:449:20)
+    at loadManifest (C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\load-manifest.js:36:52)
+    at loadManifestWithRetries (C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\load-components.js:40:51)
+    at runNextTicks (node:internal/process/task_queues:60:5)
+    at listOnTimeout (node:internal/timers:545:9)
+    at process.processTimers (node:internal/timers:519:7)
+    at async Promise.all (index 0)
+    at async loadComponentsImpl (C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\load-components.js:84:100)
+    at async Object.loadStaticPaths (C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\dev\static-paths-worker.js:23:24) {
+  type: 'Error',
+  errno: -4058,
+  code: 'ENOENT',
+  syscall: 'open',
+  path: 'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\.next\\build-manifest.json'
+}
+ ⨯ Failed to generate static paths for /[locale]/services/[slug]:
+Error: Cannot find module './vendor-chunks/@supabase.js'
+Require stack:
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\webpack-runtime.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\app\[locale]\(public)\services\[slug]\page.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\require.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\load-components.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\build\utils.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+    at C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\require-hook.js:55:36
+    at Module._load (node:internal/modules/cjs/loader:1038:27)
+    at Module.require (node:internal/modules/cjs/loader:1289:19)
+    at mod.require (C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:182:18)
+    at __webpack_require__.f.require (C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\webpack-runtime.js:198:28)
+    at C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\webpack-runtime.js:111:40
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\webpack-runtime.js:110:67) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\.next\\server\\app\\[locale]\\(public)\\services\\[slug]\\page.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ]
+}
+ ⨯ Failed to generate static paths for /[locale]/services/[slug]:
+Error: Cannot find module './vendor-chunks/@supabase.js'
+Require stack:
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\webpack-runtime.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\app\[locale]\(public)\services\[slug]\page.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\require.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\load-components.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\build\utils.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+    at C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\require-hook.js:55:36
+    at Module._load (node:internal/modules/cjs/loader:1038:27)
+    at Module.require (node:internal/modules/cjs/loader:1289:19)
+    at mod.require (C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:182:18)
+    at __webpack_require__.f.require (C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\webpack-runtime.js:198:28)
+    at C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\webpack-runtime.js:111:40
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\webpack-runtime.js:110:67) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\.next\\server\\app\\[locale]\\(public)\\services\\[slug]\\page.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ]
+}
+ ⨯ Error: Cannot find module './vendor-chunks/@supabase.js'
+Require stack:
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\webpack-runtime.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\app\[locale]\(public)\services\[slug]\page.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\require.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\load-components.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\build\utils.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+    at C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\require-hook.js:55:36
+    at Module._load (node:internal/modules/cjs/loader:1038:27)
+    at Module.require (node:internal/modules/cjs/loader:1289:19)
+    at mod.require (C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:182:18)
+    at __webpack_require__.f.require (C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\webpack-runtime.js:198:28)
+    at C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\webpack-runtime.js:111:40
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\webpack-runtime.js:110:67) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\.next\\server\\app\\[locale]\\(public)\\services\\[slug]\\page.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ],
+  page: '/ar/services/whatsapp-auto-reply-bot'
+}
+<w> [webpack.cache.PackFileCacheStrategy] Caching failed for pack: Error: ENOENT: no such file or directory, lstat 'C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\_rsc_messages_ar_json.js'
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving './_rsc_messages_ar_json' in C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server for build dependencies doesn't lead to expected result 'C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\_rsc_messages_ar_json.js', but to 'Error: Can't resolve './_rsc_messages_ar_json' in 'C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ./_rsc_messages_ar_json (expected C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\_rsc_messages_ar_json.js)
+<w>  at file dependencies C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\webpack-runtime.js
+<w>  at file C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\webpack-runtime.js
+<w>  at file dependencies C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\app\_not-found\page.js
+<w>  at file C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\app\_not-found\page.js
+<w>  at file dependencies C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\require.js
+<w>  at file C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\require.js
+<w>  at file dependencies C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\load-components.js
+<w>  at file C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\build\utils.js
+<w>  at file C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\build\utils.js
+<w>  at file dependencies C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at file C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at resolve commonjs C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving './vendor-chunks/extend' in C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server for build dependencies doesn't lead to expected result 'C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\vendor-chunks\extend.js', but to 'Error: Can't resolve './vendor-chunks/extend' in 'C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ./vendor-chunks/extend (expected C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\vendor-chunks\extend.js)
+<w>  at file dependencies C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\webpack-runtime.js
+<w>  at file C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\webpack-runtime.js
+<w>  at file dependencies C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\app\_not-found\page.js
+<w>  at file C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\app\_not-found\page.js
+<w>  at file dependencies C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\require.js
+<w>  at file C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\require.js
+<w>  at file dependencies C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\load-components.js
+<w>  at file C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\build\utils.js
+<w>  at file C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\build\utils.js
+<w>  at file dependencies C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at file C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at resolve commonjs C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w> [webpack.cache.PackFileCacheStrategy/webpack.FileSystemInfo] Resolving './vendor-chunks/has-flag' in C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server for build dependencies doesn't lead to expected result 'C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\vendor-chunks\has-flag.js', but to 'Error: Can't resolve './vendor-chunks/has-flag' in 'C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server'' instead. Resolving dependencies are ignored for this path.
+<w>  at resolve commonjs file ./vendor-chunks/has-flag (expected C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\vendor-chunks\has-flag.js)
+<w>  at file dependencies C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\webpack-runtime.js
+<w>  at file C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\webpack-runtime.js
+<w>  at file dependencies C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\app\_not-found\page.js
+<w>  at file C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\app\_not-found\page.js
+<w>  at file dependencies C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\require.js
+<w>  at file C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\require.js
+<w>  at file dependencies C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\load-components.js
+<w>  at file C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\load-components.js
+<w>  at file dependencies C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\build\utils.js
+<w>  at file C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\build\utils.js
+<w>  at file dependencies C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at file C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+<w>  at resolve commonjs C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\build\webpack\loaders\next-route-loader\index.js
+ ⨯ Error: Cannot find module './vendor-chunks/@supabase.js'
+Require stack:
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\webpack-runtime.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\app\[locale]\(public)\services\[slug]\page.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\require.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\load-components.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\build\utils.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+    at C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\require-hook.js:55:36
+    at Module._load (node:internal/modules/cjs/loader:1038:27)
+    at Module.require (node:internal/modules/cjs/loader:1289:19)
+    at mod.require (C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:182:18)
+    at __webpack_require__.f.require (C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\webpack-runtime.js:198:28)
+    at C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\webpack-runtime.js:111:40
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\webpack-runtime.js:110:67) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\.next\\server\\app\\[locale]\\(public)\\services\\[slug]\\page.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ],
+  page: '/ar/services/whatsapp-auto-reply-bot'
+}
+ ⨯ Error: Cannot find module './vendor-chunks/@supabase.js'
+Require stack:
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\webpack-runtime.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\app\[locale]\(public)\services\page.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\require.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\load-components.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\build\utils.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+    at C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\require-hook.js:55:36
+    at Module._load (node:internal/modules/cjs/loader:1038:27)
+    at Module.require (node:internal/modules/cjs/loader:1289:19)
+    at mod.require (C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:182:18)
+    at __webpack_require__.f.require (C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\webpack-runtime.js:198:28)
+    at C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\webpack-runtime.js:111:40
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\webpack-runtime.js:110:67) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\.next\\server\\app\\[locale]\\(public)\\services\\page.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ],
+  page: '/ar/services'
+}
+ ⨯ Error: Cannot find module './vendor-chunks/@supabase.js'
+Require stack:
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\webpack-runtime.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\app\[locale]\(public)\services\page.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\require.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\load-components.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\build\utils.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+    at C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\require-hook.js:55:36
+    at Module._load (node:internal/modules/cjs/loader:1038:27)
+    at Module.require (node:internal/modules/cjs/loader:1289:19)
+    at mod.require (C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:182:18)
+    at __webpack_require__.f.require (C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\webpack-runtime.js:198:28)
+    at C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\webpack-runtime.js:111:40
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\webpack-runtime.js:110:67) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\.next\\server\\app\\[locale]\\(public)\\services\\page.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ],
+  page: '/ar/services'
+}
+ ⨯ Failed to generate static paths for /[locale]:
+Error: Cannot find module './vendor-chunks/@supabase.js'
+Require stack:
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\webpack-runtime.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\app\[locale]\(public)\page.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\require.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\load-components.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\build\utils.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+    at C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\require-hook.js:55:36
+    at Module._load (node:internal/modules/cjs/loader:1038:27)
+    at Module.require (node:internal/modules/cjs/loader:1289:19)
+    at mod.require (C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:182:18)
+    at __webpack_require__.f.require (C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\webpack-runtime.js:198:28)
+    at C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\webpack-runtime.js:111:40
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\webpack-runtime.js:110:67) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\.next\\server\\app\\[locale]\\(public)\\page.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ]
+}
+ ⨯ Error: Cannot find module './vendor-chunks/@supabase.js'
+Require stack:
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\webpack-runtime.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\app\[locale]\(public)\page.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\require.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\load-components.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\build\utils.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+    at C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\require-hook.js:55:36
+    at Module._load (node:internal/modules/cjs/loader:1038:27)
+    at Module.require (node:internal/modules/cjs/loader:1289:19)
+    at mod.require (C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:182:18)
+    at __webpack_require__.f.require (C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\webpack-runtime.js:198:28)
+    at C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\webpack-runtime.js:111:40
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\webpack-runtime.js:110:67) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\.next\\server\\app\\[locale]\\(public)\\page.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ],
+  page: '/ar'
+}
+ ⨯ Error: Cannot find module './vendor-chunks/@supabase.js'
+Require stack:
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\webpack-runtime.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\app\[locale]\(public)\page.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\require.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\load-components.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\build\utils.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+    at C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\require-hook.js:55:36
+    at Module._load (node:internal/modules/cjs/loader:1038:27)
+    at Module.require (node:internal/modules/cjs/loader:1289:19)
+    at mod.require (C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:182:18)
+    at __webpack_require__.f.require (C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\webpack-runtime.js:198:28)
+    at C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\webpack-runtime.js:111:40
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\webpack-runtime.js:110:67) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\.next\\server\\app\\[locale]\\(public)\\page.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ],
+  page: '/ar'
+}
+ ⨯ Error: Cannot find module './vendor-chunks/@supabase.js'
+Require stack:
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\webpack-runtime.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\app\[locale]\(public)\page.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\require.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\load-components.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\build\utils.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\dev\static-paths-worker.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+    at C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\require-hook.js:55:36
+    at Module._load (node:internal/modules/cjs/loader:1038:27)
+    at Module.require (node:internal/modules/cjs/loader:1289:19)
+    at mod.require (C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:182:18)
+    at __webpack_require__.f.require (C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\webpack-runtime.js:198:28)
+    at C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\webpack-runtime.js:111:40
+    at Array.reduce (<anonymous>)
+    at __webpack_require__.e (C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\webpack-runtime.js:110:67) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\.next\\server\\webpack-runtime.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\.next\\server\\app\\[locale]\\(public)\\page.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\node_modules\\next\\dist\\server\\dev\\static-paths-worker.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ],
+  page: '/ar'
+}
