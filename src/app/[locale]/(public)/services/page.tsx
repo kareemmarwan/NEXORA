@@ -69,11 +69,16 @@ export default async function ServicesPage({
   }
 
   return (
-    <div className="container py-10">
-      <div className="mb-8">
-        <h1 className="text-2xl font-bold text-foreground md:text-3xl">{t('title')}</h1>
-        <p className="mt-2 text-muted-foreground">{t('subtitle')}</p>
-      </div>
+    <div>
+      {/* Page header */}
+      <section className="bg-navy py-12 text-white">
+        <div className="container">
+          <h1 className="text-2xl font-bold md:text-3xl">{t('title')}</h1>
+          <p className="mt-2 max-w-2xl text-white/70">{t('subtitle')}</p>
+        </div>
+      </section>
+
+      <div className="container py-10">
 
       {/* Search + sort */}
       <div className="mb-6 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
@@ -219,6 +224,7 @@ export default async function ServicesPage({
           </nav>
         </>
       )}
+    </div>
     </div>
   );
 }

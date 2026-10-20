@@ -6,6 +6,14 @@ const withNextIntl = createNextIntlPlugin('./src/i18n/request.ts');
 const nextConfig = {
   reactStrictMode: true,
   poweredByHeader: false,
+  webpack(config, { dev }) {
+    // Non-ASCII project paths on Windows corrupt the persistent webpack cache
+    // (vendor-chunks module-not-found errors). In-memory caching is stable.
+    if (dev) {
+      config.cache = false;
+    }
+    return config;
+  },
   images: {
     remotePatterns: [
       {

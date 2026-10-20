@@ -1,0 +1,40 @@
+
+> ai-services-store@1.0.0 build
+> next build
+
+  ▲ Next.js 14.2.35
+  - Environments: .env.local
+
+   Creating an optimized production build ...
+ ⚠ For production Image Optimization with Next.js, the optional 'sharp' package is strongly recommended. Run 'npm i sharp', and Next.js will use it automatically for Image Optimization.
+Read more: https://nextjs.org/docs/messages/sharp-missing-in-production
+ ✓ Compiled successfully
+   Linting and checking validity of types ...
+   Collecting page data ...
+unhandledRejection Error: Cannot find module 'C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\server\pages\_document.js'
+Require stack:
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\require.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\load-components.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\build\utils.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\build\worker.js
+- C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\compiled\jest-worker\processChild.js
+    at Module._resolveFilename (node:internal/modules/cjs/loader:1207:15)
+    at C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\require-hook.js:55:36
+    at Module._load (node:internal/modules/cjs/loader:1038:27)
+    at Module.require (node:internal/modules/cjs/loader:1289:19)
+    at mod.require (C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\require-hook.js:65:28)
+    at require (node:internal/modules/helpers:182:18)
+    at requirePage (C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\require.js:109:84)
+    at C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\node_modules\next\dist\server\load-components.js:72:65
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+    at async Promise.all (index 0) {
+  type: 'Error',
+  code: 'MODULE_NOT_FOUND',
+  requireStack: [
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\node_modules\\next\\dist\\server\\require.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\node_modules\\next\\dist\\server\\load-components.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\node_modules\\next\\dist\\build\\utils.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\node_modules\\next\\dist\\build\\worker.js',
+    'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\node_modules\\next\\dist\\compiled\\jest-worker\\processChild.js'
+  ]
+}

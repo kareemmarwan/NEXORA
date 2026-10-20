@@ -1,7 +1,7 @@
 import { NextResponse, type NextRequest } from 'next/server';
-import { createClient } from '@/lib/supabase/server';
 import { createAdminClient } from '@/lib/supabase/admin';
-import { rateLimit, rateLimits } from '@/lib/utils/rate-limit';
+import { guardAdminApi } from '@/lib/auth/admin-guard';
+import { rateLimits } from '@/lib/utils/rate-limit';
 
 export const dynamic = 'force-dynamic';
 
@@ -9,26 +9,8 @@ const ALLOWED_TYPES = ['image/png', 'image/jpeg', 'image/webp', 'image/avif'];
 const MAX_SIZE = 4 * 1024 * 1024;
 
 export async function POST(request: NextRequest) {
-  const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ?? 'local';
-  const limit = rateLimit(`admin-upload:${ip}`, rateLimits.upload.limit, rateLimits.upload.windowMs);
-  if (!limit.ok) {
-    return NextResponse.json({ error: 'rate_limited' }, { status: 429 });
-  }
-
-  const supabase = createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-  if (!user) return NextResponse.json({ error: 'unauthorized' }, { status: 401 });
-
-  const { data: profile } = await supabase
-    .from('profiles')
-    .select('role')
-    .eq('id', user.id)
-    .single();
-  if (profile?.role !== 'admin') {
-    return NextResponse.json({ error: 'forbidden' }, { status: 403 });
-  }
+  const guard = await guardAdminApi(request, 'upload', rateLimits.upload);
+  if (!guard.ok) return guard.response;
 
   const formData = await request.formData().catch(() => null);
   if (!formData) return NextResponse.json({ error: 'invalid_input' }, { status: 400 });

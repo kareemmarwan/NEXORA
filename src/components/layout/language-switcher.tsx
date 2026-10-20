@@ -4,7 +4,6 @@ import * as React from 'react';
 import { useLocale, useTranslations } from 'next-intl';
 import { usePathname, useRouter } from '@/i18n/navigation';
 import { routing } from '@/i18n/routing';
-import { Globe } from 'lucide-react';
 import { cn } from '@/lib/utils/cn';
 
 export function LanguageSwitcher({
@@ -25,38 +24,40 @@ export function LanguageSwitcher({
 
   return (
     <div
-      className={cn(
-        'inline-flex items-center gap-1 rounded-xl border p-1',
-        tone === 'onDark' ? 'border-white/20' : 'border-border',
-        className
-      )}
+      role="group"
+      aria-label={t('language')}
+      className={cn('inline-flex items-center gap-1.5', className)}
     >
-      <Globe
-        className={cn('ms-1 h-4 w-4', tone === 'onDark' ? 'text-white/70' : 'text-muted-foreground')}
-        aria-hidden="true"
-      />
-      <div role="group" aria-label={t('language')} className="flex">
-        {routing.locales.map((code) => (
+      {routing.locales.map((code) => {
+        const active = locale === code;
+        return (
           <button
             key={code}
             type="button"
             onClick={() => switchLocale(code)}
-            aria-pressed={locale === code}
+            aria-pressed={active}
             className={cn(
-              'h-8 rounded-lg px-2.5 text-xs font-semibold transition-colors',
-              locale === code
+              'inline-flex h-8 items-center gap-1.5 rounded-full border px-3 text-[11px] font-semibold tracking-wide transition-all duration-200',
+              active
                 ? tone === 'onDark'
-                  ? 'bg-white text-navy'
-                  : 'bg-primary text-primary-foreground'
+                  ? 'border-primary/40 bg-primary/10 text-primary shadow-glow-sm'
+                  : 'border-primary/40 bg-primary/10 text-primary'
                 : tone === 'onDark'
-                  ? 'text-white/70 hover:bg-white/10 hover:text-white'
-                  : 'text-muted-foreground hover:bg-muted'
+                  ? 'border-white/[0.06] bg-transparent text-white/40 hover:border-white/[0.12] hover:text-white/80'
+                  : 'border-border bg-transparent text-muted-foreground hover:text-foreground'
             )}
           >
-            {code === 'ar' ? 'العربية' : 'EN'}
+            <span
+              aria-hidden="true"
+              className={cn(
+                'h-[5px] w-[5px] shrink-0 rounded-full bg-primary transition-opacity duration-200',
+                active ? 'opacity-100' : 'opacity-40'
+              )}
+            />
+            {code === 'ar' ? 'AR' : 'EN'}
           </button>
-        ))}
-      </div>
+        );
+      })}
     </div>
   );
 }

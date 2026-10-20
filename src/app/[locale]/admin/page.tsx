@@ -12,7 +12,8 @@ import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table';
 import { OrderStatusBadge } from '@/components/orders/status-badges';
 import { getDashboardStats } from '@/lib/data/admin';
-import { formatDate, formatPrice } from '@/lib/utils/format';
+import { pick } from '@/lib/utils/pick';
+import { formatDate, formatDateTime, formatPrice } from '@/lib/utils/format';
 import type { SupportedLocale } from '@/lib/utils/format';
 
 function RevenueChart({
@@ -179,6 +180,107 @@ export default async function AdminDashboard({ params }: { params: { locale: str
           )}
         </CardContent>
       </Card>
+
+      <div className="grid gap-6 lg:grid-cols-3">
+        {/* Orders by status */}
+        <Card>
+          <CardHeader>
+            <CardTitle>{t('ordersByStatus')}</CardTitle>
+          </CardHeader>
+          <CardContent className="flex flex-col gap-3">
+            {stats.ordersByStatus.length === 0 ? (
+              <p className="py-6 text-center text-sm text-muted-foreground">{t('noOrders')}</p>
+            ) : (
+              stats.ordersByStatus.map(({ status, count }) => {
+                const total = stats.ordersByStatus.reduce((s, x) => s + x.count, 0);
+                return (
+                  <Link key={status} href={`/admin/orders?status=${status}`} className="group block">
+                    <div className="mb-1 flex items-center justify-between text-xs">
+                      <OrderStatusBadge status={status} />
+                      <span className="font-semibold text-foreground">{count}</span>
+                    </div>
+                    <div className="h-1.5 w-full overflow-hidden rounded-full bg-muted">
+                      <div
+                        className="h-full rounded-full bg-gradient-to-r from-[#1d4ed8] to-[#4338ca] transition-all"
+                        style={{ width: `${total > 0 ? Math.max(6, (count / total) * 100) : 0}%` }}
+                      />
+                    </div>
+                  </Link>
+                );
+              })
+            )}
+          </CardContent>
+        </Card>
+
+        {/* Top services */}
+        <Card>
+          <CardHeader>
+            <CardTitle>{t('topServices')}</CardTitle>
+          </CardHeader>
+          <CardContent className="flex flex-col gap-3">
+            {stats.topServices.length === 0 ? (
+              <p className="py-6 text-center text-sm text-muted-foreground">{t('noOrders')}</p>
+            ) : (
+              stats.topServices.map((service, index) => (
+                <div key={`${service.titleAr}-${service.titleEn}`} className="flex items-center gap-3">
+                  <span className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-primary/10 text-xs font-bold text-primary">
+                    {index + 1}
+                  </span>
+                  <div className="min-w-0 flex-1">
+                    <p className="truncate text-sm font-medium text-foreground">
+                      {pick(service, 'title', locale)}
+                    </p>
+                    <p className="text-xs text-muted-foreground">
+                      {t('soldCount', { count: service.count })}
+                    </p>
+                  </div>
+                  <span className="shrink-0 text-sm font-semibold text-foreground">
+                    {formatPrice(service.revenue, locale)}
+                  </span>
+                </div>
+              ))
+            )}
+          </CardContent>
+        </Card>
+
+        {/* Recent events */}
+        <Card>
+          <CardHeader>
+            <CardTitle>{t('recentEvents')}</CardTitle>
+          </CardHeader>
+          <CardContent>
+            {stats.recentEvents.length === 0 ? (
+              <p className="py-6 text-center text-sm text-muted-foreground">{t('noEvents')}</p>
+            ) : (
+              <ol className="relative flex flex-col gap-4 border-s border-border ps-4">
+                {stats.recentEvents.map((event) => (
+                  <li key={event.id} className="relative">
+                    <span className="absolute -start-[21px] top-1.5 h-2 w-2 rounded-full bg-primary" />
+                    <p className="text-sm text-foreground">
+                      {event.message ? (
+                        event.message
+                      ) : (
+                        t.has(`eventTypes.${event.type}`)
+                        ? t(`eventTypes.${event.type}`)
+                        : event.type
+                      )}
+                    </p>
+                    <p className="mt-0.5 text-xs text-muted-foreground">
+                      {event.order_number && (
+                        <Link href={`/admin/orders/${event.order_id}`} className="text-primary hover:underline" dir="ltr">
+                          {event.order_number}
+                        </Link>
+                      )}
+                      {event.order_number && ' · '}
+                      {formatDateTime(event.created_at, locale)}
+                    </p>
+                  </li>
+                ))}
+              </ol>
+            )}
+          </CardContent>
+        </Card>
+      </div>
 
       <Card>
         <CardHeader>

@@ -62,6 +62,8 @@ export function useTheme(): ThemeContextValue {
   return ctx;
 }
 
+const themeOrder: Theme[] = ['light', 'system', 'dark'];
+
 export function ThemeToggle({
   className,
   tone = 'default',
@@ -75,40 +77,38 @@ export function ThemeToggle({
 
   React.useEffect(() => setMounted(true), []);
 
-  const options = [
-    { value: 'light' as const, icon: Sun, label: t('light') },
-    { value: 'system' as const, icon: Monitor, label: t('system') },
-    { value: 'dark' as const, icon: Moon, label: t('dark') },
-  ];
+  const current: Theme = mounted ? theme : 'system';
+  const idx = themeOrder.indexOf(current);
+  const next: Theme = themeOrder[(idx + 1) % themeOrder.length] ?? 'light';
+
+  const icons: Record<Theme, typeof Sun> = {
+    light: Sun,
+    system: Monitor,
+    dark: Moon,
+  };
+  const labels: Record<Theme, string> = {
+    light: t('light'),
+    system: t('system'),
+    dark: t('dark'),
+  };
+
+  const Icon = icons[current];
 
   return (
-    <div
-      role="group"
-      aria-label={t('theme')}
+    <button
+      type="button"
+      onClick={() => setTheme(next)}
+      aria-label={`${labels[current]} → ${labels[next]}`}
+      title={labels[current]}
       className={cn(
-        'inline-flex items-center gap-1 rounded-xl border p-1',
-        tone === 'onDark' ? 'border-white/20' : 'border-border',
+        'nav-control-btn inline-flex h-9 w-9 items-center justify-center rounded-lg transition-all duration-200',
+        tone === 'onDark'
+          ? 'text-white/70 hover:text-white hover:bg-white/10'
+          : 'text-muted-foreground hover:text-foreground hover:bg-muted',
         className
       )}
     >
-      {options.map(({ value, icon: Icon, label }) => (
-        <button
-          key={value}
-          type="button"
-          onClick={() => setTheme(value)}
-          aria-label={label}
-          aria-pressed={mounted && theme === value}
-          className={cn(
-            'inline-flex h-8 w-8 items-center justify-center rounded-lg transition-colors',
-            tone === 'onDark' ? 'text-white/70 hover:bg-white/10 hover:text-white' : 'text-muted-foreground',
-            mounted &&
-              theme === value &&
-              (tone === 'onDark' ? 'bg-white/15 text-white' : 'bg-muted text-foreground')
-          )}
-        >
-          <Icon className="h-4 w-4" aria-hidden="true" />
-        </button>
-      ))}
-    </div>
+      <Icon className="h-[18px] w-[18px] transition-transform duration-300" aria-hidden="true" />
+    </button>
   );
 }

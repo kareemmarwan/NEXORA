@@ -1,6 +1,7 @@
 import { cache } from 'react';
 import { createAdminClient } from '@/lib/supabase/admin';
 import type {
+  BlogPost,
   Category,
   Order,
   OrderStatus,
@@ -18,6 +19,16 @@ export interface DashboardStats {
   revenueThisMonth: number;
   latestOrders: Order[];
   revenueByDay: { day: string; revenue: number }[];
+  ordersByStatus: { status: OrderStatus; count: number }[];
+  topServices: { titleAr: string; titleEn: string; count: number; revenue: number }[];
+  recentEvents: {
+    id: string;
+    type: string;
+    message: string | null;
+    created_at: string;
+    order_id: string;
+    order_number: string | null;
+  }[];
 }
 
 export const getDashboardStats = cache(async (): Promise<DashboardStats> => {
@@ -72,6 +83,44 @@ export const getDashboardStats = cache(async (): Promise<DashboardStats> => {
     if (entry) entry.revenue += Number(order.total);
   }
 
+  // Orders by status (all statuses, counted client-side).
+  const { data: statusRows } = await admin.from('orders').select('status');
+  const statusCounts = new Map<OrderStatus, number>();
+  for (const row of statusRows ?? []) {
+    statusCounts.set(row.status, (statusCounts.get(row.status) ?? 0) + 1);
+  }
+  const ordersByStatus = Array.from(statusCounts.entries())
+    .map(([status, count]) => ({ status, count }))
+    .sort((a, b) => b.count - a.count);
+
+  // Top selling services (paid orders only).
+  const { data: itemRows } = await admin
+    .from('order_items')
+    .select('title_snapshot_ar, title_snapshot_en, unit_price, quantity, orders!inner(payment_status)')
+    .eq('orders.payment_status', 'paid');
+
+  const serviceAgg = new Map<string, { titleAr: string; titleEn: string; count: number; revenue: number }>();
+  for (const item of itemRows ?? []) {
+    const titleAr = item.title_snapshot_ar ?? '';
+    const titleEn = item.title_snapshot_en ?? '';
+    const key = titleAr || titleEn;
+    if (!key) continue;
+    const entry = serviceAgg.get(key) ?? { titleAr, titleEn, count: 0, revenue: 0 };
+    entry.count += item.quantity ?? 1;
+    entry.revenue += Number(item.unit_price) * (item.quantity ?? 1);
+    serviceAgg.set(key, entry);
+  }
+  const topServices = Array.from(serviceAgg.values())
+    .sort((a, b) => b.revenue - a.revenue)
+    .slice(0, 5);
+
+  // Recent system events.
+  const { data: events } = await admin
+    .from('order_events')
+    .select('id, type, message, created_at, order_id, orders(order_number)')
+    .order('created_at', { ascending: false })
+    .limit(8);
+
   return {
     pendingReview: pendingReview.count ?? 0,
     inProgress: inProgress.count ?? 0,
@@ -79,6 +128,16 @@ export const getDashboardStats = cache(async (): Promise<DashboardStats> => {
     revenueThisMonth: (revenue.data ?? []).reduce((sum, o) => sum + Number(o.total), 0),
     latestOrders: latest ?? [],
     revenueByDay: days,
+    ordersByStatus,
+    topServices,
+    recentEvents: (events ?? []).map((e) => ({
+      id: e.id,
+      type: e.type,
+      message: e.message,
+      created_at: e.created_at,
+      order_id: e.order_id,
+      order_number: e.orders?.order_number ?? null,
+    })),
   };
 });
 
@@ -212,12 +271,12 @@ export const getAdminPaymentMethods = cache(async () => {
   return data ?? [];
 });
 
-export const getAdminCustomers = cache(async (search?: string | null) => {
+export const getAdminCustomers = cache(async (search?: string | null, role?: string | null) => {
   const admin = createAdminClient();
 
   let profileQuery = admin
     .from('profiles')
-    .select('id, full_name, phone, business_name, created_at')
+    .select('id, full_name, phone, business_name, role, created_at')
     .order('created_at', { ascending: false })
     .limit(100);
 
@@ -226,6 +285,10 @@ export const getAdminCustomers = cache(async (search?: string | null) => {
     profileQuery = profileQuery.or(
       `full_name.ilike.%${term.replace(/[%_]/g, '\\$&')}%,business_name.ilike.%${term.replace(/[%_]/g, '\\$&')}%`
     );
+  }
+
+  if (role === 'admin' || role === 'customer') {
+    profileQuery = profileQuery.eq('role', role);
   }
 
   const { data: profiles } = await profileQuery;
@@ -274,3 +337,61 @@ export const getAllAddonsForService = cache(async (serviceId: string): Promise<S
   const { data } = await admin.from('service_addons').select('*').eq('service_id', serviceId);
   return data ?? [];
 });
+
+export const getAdminBlogPosts = cache(async (search?: string | null): Promise<BlogPost[]> => {
+  const admin = createAdminClient();
+
+  let query = admin
+    .from('blog_posts')
+    .select('*')
+    .order('created_at', { ascending: false })
+    .limit(200);
+
+  if (search && search.trim().length > 0) {
+    const term = search.trim().replace(/[%_]/g, '\\$&');
+    query = query.or(`title_ar.ilike.%${term}%,title_en.ilike.%${term}%`);
+  }
+
+  const { data, error } = await query;
+  if (error) {
+    console.error('[admin] getAdminBlogPosts failed', error);
+    return [];
+  }
+  return data ?? [];
+});
+
+export const getAdminBlogPost = cache(async (id: string): Promise<BlogPost | null> => {
+  const admin = createAdminClient();
+  const { data } = await admin.from('blog_posts').select('*').eq('id', id).single();
+  return data ?? null;
+});
+
+// ─── Media library ───
+
+export interface AdminMediaFile {
+  path: string;
+  name: string;
+  url: string;
+  size: number | null;
+  updatedAt: string | null;
+}
+
+export const MEDIA_BUCKET = 'service-covers';
+export const MEDIA_PREFIX = 'covers';
+
+export async function getAdminMediaFiles(): Promise<AdminMediaFile[]> {
+  const admin = createAdminClient();
+  const { data } = await admin.storage
+    .from(MEDIA_BUCKET)
+    .list(MEDIA_PREFIX, { limit: 200, sortBy: { column: 'created_at', order: 'desc' } });
+
+  return (data ?? [])
+    .filter((f) => f.id !== null) // folders have null id
+    .map((f) => ({
+      path: `${MEDIA_PREFIX}/${f.name}`,
+      name: f.name,
+      url: admin.storage.from(MEDIA_BUCKET).getPublicUrl(`${MEDIA_PREFIX}/${f.name}`).data.publicUrl,
+      size: f.metadata?.size ?? null,
+      updatedAt: f.updated_at ?? null,
+    }));
+}

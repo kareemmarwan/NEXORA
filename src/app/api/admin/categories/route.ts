@@ -1,35 +1,16 @@
 import { NextResponse, type NextRequest } from 'next/server';
 import { z } from 'zod';
-import { createClient } from '@/lib/supabase/server';
 import { createAdminClient } from '@/lib/supabase/admin';
-import { rateLimit, rateLimits } from '@/lib/utils/rate-limit';
+import { guardAdminApi } from '@/lib/auth/admin-guard';
 import { createAdminSchemas } from '@/lib/validation';
 
 export const dynamic = 'force-dynamic';
 
 const schemas = createAdminSchemas((key) => key);
 
-async function requireAdminUser() {
-  const supabase = createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-  if (!user) return null;
-  const { data: profile } = await supabase
-    .from('profiles')
-    .select('role')
-    .eq('id', user.id)
-    .single();
-  return profile?.role === 'admin' ? user : null;
-}
-
 export async function POST(request: NextRequest) {
-  const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ?? 'local';
-  const limit = rateLimit(`admin-cat:${ip}`, rateLimits.general.limit, rateLimits.general.windowMs);
-  if (!limit.ok) return NextResponse.json({ error: 'rate_limited' }, { status: 429 });
-
-  const adminUser = await requireAdminUser();
-  if (!adminUser) return NextResponse.json({ error: 'forbidden' }, { status: 403 });
+  const guard = await guardAdminApi(request, 'cat');
+  if (!guard.ok) return guard.response;
 
   const body = await request.json().catch(() => null);
   const parsed = schemas.categorySchema.safeParse(body);
@@ -60,12 +41,8 @@ export async function POST(request: NextRequest) {
 }
 
 export async function PATCH(request: NextRequest) {
-  const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ?? 'local';
-  const limit = rateLimit(`admin-cat:${ip}`, rateLimits.general.limit, rateLimits.general.windowMs);
-  if (!limit.ok) return NextResponse.json({ error: 'rate_limited' }, { status: 429 });
-
-  const adminUser = await requireAdminUser();
-  if (!adminUser) return NextResponse.json({ error: 'forbidden' }, { status: 403 });
+  const guard = await guardAdminApi(request, 'cat');
+  if (!guard.ok) return guard.response;
 
   const body = await request.json().catch(() => null);
   const parsed = schemas.categorySchema.extend({ id: z.string().uuid() }).safeParse(body);
@@ -94,8 +71,8 @@ export async function PATCH(request: NextRequest) {
 }
 
 export async function DELETE(request: NextRequest) {
-  const adminUser = await requireAdminUser();
-  if (!adminUser) return NextResponse.json({ error: 'forbidden' }, { status: 403 });
+  const guard = await guardAdminApi(request, 'cat');
+  if (!guard.ok) return guard.response;
 
   const body = await request.json().catch(() => null);
   const parsed = z.object({ id: z.string().uuid() }).safeParse(body);

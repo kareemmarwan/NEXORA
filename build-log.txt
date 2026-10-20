@@ -1,0 +1,21 @@
+﻿
+> ai-services-store@1.0.0 build
+> next build
+
+  ظû▓ Next.js 14.2.35
+  - Environments: .env.local
+
+   Creating an optimized production build ...
+npm : uncaughtException [Error: EPERM: operation not permitted, open 'C:\Users\PC\Desktop\┘à┘╪╡╪ر ╪┤╪د┘à┘╪ر ╪«╪د╪╡╪ر 
+┘┘è ╪د┘è╪ش┘╪ز ┘à┘ê╪╕┘┘è┘\.next\trace'] {
+At line:1 char:1
++ npm run build 2>&1 | Out-File -FilePath "build-log.txt" -Encoding UTF ...
++ ~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (uncaughtExcepti....next\trace'] {:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+  errno: -4048,
+  code: 'EPERM',
+  syscall: 'open',
+  path: 'C:\\Users\\PC\\Desktop\\┘à┘╪╡╪ر ╪┤╪د┘à┘╪ر ╪«╪د╪╡╪ر ┘┘è ╪د┘è╪ش┘╪ز ┘à┘ê╪╕┘┘è┘\\.next\\trace'
+}

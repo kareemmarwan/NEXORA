@@ -1,6 +1,6 @@
 import createIntlMiddleware from 'next-intl/middleware';
 import type { NextRequest } from 'next/server';
-import { routing } from './src/i18n/routing';
+import { routing } from '@/i18n/routing';
 
 const intlMiddleware = createIntlMiddleware(routing);
 
@@ -11,7 +11,7 @@ export async function middleware(request: NextRequest) {
     return response;
   }
 
-  const { updateSession } = await import('./src/lib/supabase/middleware');
+  const { updateSession } = await import('./lib/supabase/middleware');
   return updateSession(request, response);
 }
 

@@ -32,7 +32,7 @@ export function Accordion({
   }
 
   return (
-    <div className={cn('flex flex-col divide-y divide-border rounded-2xl border border-border', className)}>
+    <div className={cn('flex flex-col divide-y divide-white/[0.06] rounded-2xl border border-white/[0.06] overflow-hidden', className)}>
       {items.map((item) => {
         const open = openIds.includes(item.id);
         return (
@@ -44,12 +44,12 @@ export function Accordion({
                 aria-controls={`accordion-panel-${item.id}`}
                 id={`accordion-trigger-${item.id}`}
                 onClick={() => toggle(item.id)}
-                className="flex w-full items-center justify-between gap-4 rounded-xl px-5 py-4 text-start text-sm font-medium text-foreground hover:bg-muted/50"
+                className="flex w-full items-center justify-between gap-4 px-6 py-5 text-start text-body font-medium text-foreground hover:bg-muted/30 transition-colors duration-150"
               >
                 <span>{item.question}</span>
                 <ChevronDown
                   className={cn(
-                    'h-5 w-5 shrink-0 text-muted-foreground transition-transform',
+                    'h-5 w-5 shrink-0 text-muted-foreground transition-transform duration-200',
                     open && 'rotate-180'
                   )}
                   aria-hidden="true"
@@ -61,7 +61,7 @@ export function Accordion({
               role="region"
               aria-labelledby={`accordion-trigger-${item.id}`}
               hidden={!open}
-              className="px-5 pb-5 text-sm leading-relaxed text-muted-foreground"
+              className="px-6 pb-6 text-body text-muted-foreground leading-relaxed"
             >
               {item.answer}
             </div>

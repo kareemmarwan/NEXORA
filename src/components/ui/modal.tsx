@@ -58,7 +58,7 @@ export function Modal({ open, onClose, title, description, children, footer, cla
   return (
     <div className="fixed inset-0 z-50 flex items-end justify-center sm:items-center">
       <div
-        className="fixed inset-0 bg-black/50 backdrop-blur-sm"
+        className="fixed inset-0 bg-navy/40 backdrop-blur-sm animate-fade-in"
         aria-hidden="true"
         onClick={onClose}
       />
@@ -69,7 +69,7 @@ export function Modal({ open, onClose, title, description, children, footer, cla
         aria-label={typeof title === 'string' ? title : undefined}
         tabIndex={-1}
         className={cn(
-          'relative z-10 w-full max-w-lg animate-fade-in rounded-t-2xl border border-border bg-card p-6 shadow-lg',
+          'relative z-10 w-full max-w-lg animate-slide-up rounded-t-2xl border border-border/70 bg-card p-6 shadow-elevated',
           'max-h-[90vh] overflow-y-auto sm:rounded-2xl',
           className
         )}

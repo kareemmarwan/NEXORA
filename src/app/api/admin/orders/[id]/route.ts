@@ -1,8 +1,7 @@
 import { NextResponse, type NextRequest } from 'next/server';
 import { z } from 'zod';
-import { createClient } from '@/lib/supabase/server';
 import { createAdminClient } from '@/lib/supabase/admin';
-import { rateLimit, rateLimits } from '@/lib/utils/rate-limit';
+import { guardAdminApi } from '@/lib/auth/admin-guard';
 import { orderStatusSchema } from '@/lib/validation';
 import { sendPaymentConfirmedEmail, sendDeliveredEmail } from '@/lib/email';
 
@@ -31,36 +30,14 @@ const bodySchema = z.union([
   }),
 ]);
 
-async function requireAdminUser() {
-  const supabase = createClient();
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-  if (!user) return null;
-  const { data: profile } = await supabase
-    .from('profiles')
-    .select('role')
-    .eq('id', user.id)
-    .single();
-  if (profile?.role !== 'admin') return null;
-  return user;
-}
-
 export async function PATCH(request: NextRequest, { params }: { params: { id: string } }) {
-  const ip = request.headers.get('x-forwarded-for')?.split(',')[0]?.trim() ?? 'local';
-  const limit = rateLimit(`admin-order:${ip}`, rateLimits.general.limit, rateLimits.general.windowMs);
-  if (!limit.ok) {
-    return NextResponse.json({ error: 'rate_limited' }, { status: 429 });
-  }
+  const guard = await guardAdminApi(request, 'order');
+  if (!guard.ok) return guard.response;
+  const adminUser = guard.user;
 
   const parsedParams = paramsSchema.safeParse(params);
   if (!parsedParams.success) {
     return NextResponse.json({ error: 'invalid_input' }, { status: 400 });
-  }
-
-  const adminUser = await requireAdminUser();
-  if (!adminUser) {
-    return NextResponse.json({ error: 'forbidden' }, { status: 403 });
   }
 
   const body = await request.json().catch(() => null);

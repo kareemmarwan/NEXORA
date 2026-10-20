@@ -1,21 +1,81 @@
 import type { Metadata } from 'next';
-import { Cairo } from 'next/font/google';
+import localFont from 'next/font/local';
 import { notFound } from 'next/navigation';
 import { NextIntlClientProvider } from 'next-intl';
 import { getMessages, getTranslations, setRequestLocale } from 'next-intl/server';
 import { routing } from '@/i18n/routing';
 import { Providers } from '@/components/layout/providers';
+import { GradientIconDefs } from '@/components/ui/gradient-icon';
 import { Header, type HeaderUser } from '@/components/layout/header';
 import { Footer } from '@/components/layout/footer';
 import { createClient } from '@/lib/supabase/server';
 import { absoluteUrl } from '@/lib/utils/cn';
 import '@/app/globals.css';
 
-const cairo = Cairo({
-  subsets: ['arabic', 'latin'],
-  variable: '--font-sans',
+/* All fonts are self-hosted (next/font/local) — Google Fonts
+   downloads were failing at build time, silently swapping every
+   family for a system fallback. Local files render offline and
+   keep the CSS variables identical. */
+const spaceGrotesk = localFont({
+  src: [
+    { path: '../../fonts/SpaceGrotesk-400.ttf', weight: '400', style: 'normal' },
+    { path: '../../fonts/SpaceGrotesk-500.ttf', weight: '500', style: 'normal' },
+    { path: '../../fonts/SpaceGrotesk-600.ttf', weight: '600', style: 'normal' },
+    { path: '../../fonts/SpaceGrotesk-700.ttf', weight: '700', style: 'normal' },
+  ],
+  variable: '--font-brand',
   display: 'swap',
 });
+
+const inter = localFont({
+  src: [
+    { path: '../../fonts/Inter-400.ttf', weight: '400', style: 'normal' },
+    { path: '../../fonts/Inter-500.ttf', weight: '500', style: 'normal' },
+    { path: '../../fonts/Inter-600.ttf', weight: '600', style: 'normal' },
+    { path: '../../fonts/Inter-700.ttf', weight: '700', style: 'normal' },
+    { path: '../../fonts/Inter-800.ttf', weight: '800', style: 'normal' },
+  ],
+  variable: '--font-english',
+  display: 'swap',
+});
+
+const cairo = localFont({
+  src: [
+    { path: '../../fonts/Cairo-400.ttf', weight: '400', style: 'normal' },
+    { path: '../../fonts/Cairo-500.ttf', weight: '500', style: 'normal' },
+    { path: '../../fonts/Cairo-600.ttf', weight: '600', style: 'normal' },
+    { path: '../../fonts/Cairo-700.ttf', weight: '700', style: 'normal' },
+    { path: '../../fonts/Cairo-800.ttf', weight: '800', style: 'normal' },
+  ],
+  variable: '--font-arabic',
+  display: 'swap',
+});
+
+const jetbrainsMono = localFont({
+  src: [
+    { path: '../../fonts/JetBrainsMono-400.ttf', weight: '400', style: 'normal' },
+    { path: '../../fonts/JetBrainsMono-500.ttf', weight: '500', style: 'normal' },
+    { path: '../../fonts/JetBrainsMono-600.ttf', weight: '600', style: 'normal' },
+    { path: '../../fonts/JetBrainsMono-700.ttf', weight: '700', style: 'normal' },
+  ],
+  variable: '--font-mono',
+  display: 'swap',
+});
+
+const orbitron = localFont({
+  src: [
+    { path: '../../fonts/Orbitron-Regular.ttf', weight: '400', style: 'normal' },
+    { path: '../../fonts/Orbitron-Medium.ttf', weight: '500', style: 'normal' },
+    { path: '../../fonts/Orbitron-SemiBold.ttf', weight: '600', style: 'normal' },
+    { path: '../../fonts/Orbitron-Bold.ttf', weight: '700', style: 'normal' },
+    { path: '../../fonts/Orbitron-ExtraBold.ttf', weight: '800', style: 'normal' },
+    { path: '../../fonts/Orbitron-Black.ttf', weight: '900', style: 'normal' },
+  ],
+  variable: '--font-nexora',
+  display: 'swap',
+});
+
+const fontVariables = `${spaceGrotesk.variable} ${inter.variable} ${cairo.variable} ${jetbrainsMono.variable} ${orbitron.variable}`;
 
 export function generateStaticParams() {
   return routing.locales.map((locale) => ({ locale }));
@@ -37,7 +97,19 @@ export async function generateMetadata({
       default: t('appName'),
       template: `%s | ${t('shortName')}`,
     },
-    description: t('tagline'),
+    description: t('metaDescription'),
+    openGraph: {
+      type: 'website',
+      siteName: t('appName'),
+      title: t('appName'),
+      description: t('metaDescription'),
+      locale,
+    },
+    twitter: {
+      card: 'summary',
+      title: t('appName'),
+      description: t('metaDescription'),
+    },
     alternates: {
       languages: {
         ar: '/ar',
@@ -95,9 +167,10 @@ export default async function LocaleLayout({
       lang={locale}
       dir={isRtl ? 'rtl' : 'ltr'}
       suppressHydrationWarning
-      className={cairo.variable}
+      className={fontVariables}
     >
-      <body className="font-sans">
+      <body className="font-sans" suppressHydrationWarning>
+        <GradientIconDefs />
         <NextIntlClientProvider messages={messages}>
           <Providers>
             <a
@@ -107,6 +180,7 @@ export default async function LocaleLayout({
               {t('skipToContent')}
             </a>
             <Header user={user} />
+            <div className="noise" aria-hidden="true" />
             <main id="main-content" className="min-h-[60vh]">
               {children}
             </main>

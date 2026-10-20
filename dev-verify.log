@@ -1,0 +1,22 @@
+
+> ai-services-store@1.0.0 dev
+> next dev
+
+ ⚠ Port 3000 is in use, trying 3001 instead.
+  ▲ Next.js 14.2.35
+  - Local:        http://localhost:3001
+  - Environments: .env.local
+
+ ✓ Starting...
+[Error: EPERM: operation not permitted, open 'C:\Users\PC\Desktop\منصة شاملة خاصة في ايجنت موظفين\.next\trace'] {
+  errno: -4048,
+  code: 'EPERM',
+  syscall: 'open',
+  path: 'C:\\Users\\PC\\Desktop\\منصة شاملة خاصة في ايجنت موظفين\\.next\\trace'
+}
+ ✓ Ready in 11.2s
+   Reload env: .env.local
+   Reload env: .env.local
+   Reload env: .env.local
+   Reload env: .env.local
+   Reload env: .env.local

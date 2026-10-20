@@ -222,11 +222,84 @@ export function createAdminSchemas(t: (key: string) => string) {
     internalNotes: z.string().trim().max(10000).optional(),
   });
 
+  const blogPostSchema = z.object({
+    slug: z
+      .string()
+      .trim()
+      .min(1, t('validation.slugRequired'))
+      .max(160)
+      .regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, t('validation.slugInvalid')),
+    titleAr: z.string().trim().min(1, t('validation.titleRequired')).max(200),
+    titleEn: z.string().trim().min(1, t('validation.titleRequired')).max(200),
+    excerptAr: z.string().trim().max(500).optional(),
+    excerptEn: z.string().trim().max(500).optional(),
+    contentAr: z.string().trim().max(100000).optional(),
+    contentEn: z.string().trim().max(100000).optional(),
+    coverImageUrl: z.string().trim().max(1000).nullable().optional(),
+    tags: z.array(z.string().trim().min(1).max(40)).max(15).default([]),
+    authorName: z.string().trim().max(120).optional(),
+    readingMinutes: z.coerce.number().int().min(1).max(120).default(5),
+    isPublished: z.boolean().default(false),
+    publishedAt: z.string().datetime().nullable().optional(),
+  });
+
+  const customerUpdateSchema = z.object({
+    fullName: z.string().trim().min(2, t('validation.nameRequired')).max(120),
+    phone: z.union([phoneSchema, z.literal('')]).optional(),
+    businessName: z.string().trim().max(120).optional(),
+    role: z.enum(['customer', 'admin']).optional(),
+  });
+
+  const docsSectionSchema = z.object({
+    id: z
+      .string()
+      .trim()
+      .min(1)
+      .max(60)
+      .regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, t('validation.slugInvalid')),
+    titleAr: z.string().trim().min(1, t('validation.titleRequired')).max(120),
+    titleEn: z.string().trim().min(1, t('validation.titleRequired')).max(120),
+    icon: z.enum(['user', 'cart', 'package']).default('user'),
+  });
+
+  const docsArticleSchema = z.object({
+    slug: z
+      .string()
+      .trim()
+      .min(1, t('validation.slugRequired'))
+      .max(160)
+      .regex(/^[a-z0-9]+(?:-[a-z0-9]+)*$/, t('validation.slugInvalid')),
+    sectionId: z.string().trim().min(1).max(60),
+    titleAr: z.string().trim().min(1, t('validation.titleRequired')).max(200),
+    titleEn: z.string().trim().min(1, t('validation.titleRequired')).max(200),
+    descAr: z.string().trim().max(500).default(''),
+    descEn: z.string().trim().max(500).default(''),
+    readingMinutes: z.coerce.number().int().min(1).max(120).default(5),
+    contentAr: z.string().trim().max(100000).default(''),
+    contentEn: z.string().trim().max(100000).default(''),
+  });
+
+  const docsSaveSchema = z
+    .object({
+      sections: z.array(docsSectionSchema).max(12),
+      articles: z.array(docsArticleSchema).max(60),
+    })
+    .refine(
+      (data) => {
+        const ids = new Set(data.sections.map((s) => s.id));
+        return data.articles.every((a) => ids.has(a.sectionId));
+      },
+      { message: 'validation.docsSectionMissing' }
+    );
+
   return {
     categorySchema,
     serviceSchema,
     paymentMethodSchema,
     orderStatusUpdateSchema,
+    blogPostSchema,
+    customerUpdateSchema,
+    docsSaveSchema,
     faqSchema,
     addonSchema,
   };
@@ -240,3 +313,4 @@ export type PaymentMethodInput = z.infer<
 export type OrderStatusUpdateInput = z.infer<
   ReturnType<typeof createAdminSchemas>['orderStatusUpdateSchema']
 >;
+export type BlogPostInput = z.infer<ReturnType<typeof createAdminSchemas>['blogPostSchema']>;

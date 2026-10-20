@@ -36,6 +36,17 @@ do $$ begin
   create type public.proof_status as enum ('pending', 'approved', 'rejected');
 exception when duplicate_object then null; end $$;
 
+-- ---------- profiles ----------
+create table if not exists public.profiles (
+  id uuid primary key references auth.users (id) on delete cascade,
+  full_name text,
+  phone text,
+  business_name text,
+  role public.user_role not null default 'customer',
+  preferred_locale text,
+  created_at timestamptz not null default now()
+);
+
 -- ---------- Helper functions ----------
 create or replace function public.is_admin()
 returns boolean
@@ -52,17 +63,6 @@ $$;
 
 revoke all on function public.is_admin() from public;
 grant execute on function public.is_admin() to authenticated, anon;
-
--- ---------- profiles ----------
-create table if not exists public.profiles (
-  id uuid primary key references auth.users (id) on delete cascade,
-  full_name text,
-  phone text,
-  business_name text,
-  role public.user_role not null default 'customer',
-  preferred_locale text,
-  created_at timestamptz not null default now()
-);
 
 create or replace function public.handle_new_user()
 returns trigger
@@ -499,7 +499,11 @@ create policy "service_covers_admin_write" on storage.objects
   with check (bucket_id = 'service-covers' and public.is_admin());
 
 -- ============================================================
--- First admin (run manually after creating your account):
+-- First admin bootstrap (run once in the SQL editor, after
+-- registering your account from the site). The escalation guard
+-- trigger must be disabled because auth.uid() is null there.
+--   alter table public.profiles disable trigger profiles_prevent_role_escalation;
 --   update public.profiles set role = 'admin'
 --   where id = (select id from auth.users where email = 'you@example.com');
+--   alter table public.profiles enable trigger profiles_prevent_role_escalation;
 -- ============================================================

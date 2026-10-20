@@ -1,0 +1,45 @@
+﻿
+> ai-services-store@1.0.0 dev
+> next dev
+
+  ظû▓ Next.js 14.2.35
+  - Local:        http://localhost:3000
+  - Environments: .env.local
+
+ ظ£ô Starting...
+ ظ£ô Ready in 13.3s
+ ظùï Compiling /src/middleware ...
+ ظ£ô Compiled /src/middleware in 8s (179 modules)
+ ظùï Compiling /[locale] ...
+npm : The user aborted a request.
+    + CategoryInfo          : NotSpecified: (The user aborted a request.:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+
+Retrying 1/3...
+The user aborted a request.
+
+Retrying 1/3...
+The user aborted a request.
+
+Retrying 1/3...
+The user aborted a request.
+
+Retrying 1/3...
+The user aborted a request.
+
+Retrying 1/3...
+The user aborted a request.
+
+Retrying 1/3...
+The user aborted a request.
+
+Retrying 1/3...
+ ظ£ô Compiled /[locale] in 68.1s (1367 modules)
+ GET /ar 200 in 82256ms
+ GET /en 200 in 82670ms
+ GET /ar 200 in 21311ms
+ GET /en 200 in 2626ms
+ ظùï Compiling /icon.svg ...
+ ظ£ô Compiled /icon.svg in 3.6s (838 modules)
+ GET /icon.svg?d936110107346986 200 in 7833ms

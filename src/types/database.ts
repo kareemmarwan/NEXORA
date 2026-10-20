@@ -473,6 +473,101 @@ export interface Database {
           }
         ];
       };
+      site_settings: {
+        Row: {
+          key: string;
+          value_ar: string;
+          value_en: string;
+          updated_at: string;
+        };
+        Insert: {
+          key: string;
+          value_ar?: string;
+          value_en?: string;
+          updated_at?: string;
+        };
+        Update: {
+          value_ar?: string;
+          value_en?: string;
+          updated_at?: string;
+        };
+        Relationships: [];
+      };
+      blog_posts: {
+        Row: {
+          id: string;
+          slug: string;
+          title_ar: string;
+          title_en: string;
+          excerpt_ar: string | null;
+          excerpt_en: string | null;
+          content_ar: string | null;
+          content_en: string | null;
+          cover_image_url: string | null;
+          tags: Json | null;
+          author_name: string | null;
+          reading_minutes: number;
+          is_published: boolean;
+          published_at: string | null;
+          created_at: string;
+          updated_at: string;
+        };
+        Insert: {
+          id?: string;
+          slug: string;
+          title_ar: string;
+          title_en: string;
+          excerpt_ar?: string | null;
+          excerpt_en?: string | null;
+          content_ar?: string | null;
+          content_en?: string | null;
+          cover_image_url?: string | null;
+          tags?: Json | null;
+          author_name?: string | null;
+          reading_minutes?: number;
+          is_published?: boolean;
+          published_at?: string | null;
+          created_at?: string;
+          updated_at?: string;
+        };
+        Update: {
+          slug?: string;
+          title_ar?: string;
+          title_en?: string;
+          excerpt_ar?: string | null;
+          excerpt_en?: string | null;
+          content_ar?: string | null;
+          content_en?: string | null;
+          cover_image_url?: string | null;
+          tags?: Json | null;
+          author_name?: string | null;
+          reading_minutes?: number;
+          is_published?: boolean;
+          published_at?: string | null;
+          updated_at?: string;
+        };
+        Relationships: [];
+      };
+      site_content: {
+        Row: {
+          key: string;
+          content_ar: Json;
+          content_en: Json;
+          updated_at: string;
+        };
+        Insert: {
+          key: string;
+          content_ar?: Json;
+          content_en?: Json;
+          updated_at?: string;
+        };
+        Update: {
+          content_ar?: Json;
+          content_en?: Json;
+          updated_at?: string;
+        };
+        Relationships: [];
+      };
     };
     Views: Record<string, never>;
     Functions: {
@@ -509,6 +604,10 @@ export type Order = Tables<'orders'>;
 export type OrderItem = Tables<'order_items'>;
 export type PaymentProof = Tables<'payment_proofs'>;
 export type OrderEvent = Tables<'order_events'>;
+
+export type SiteSetting = Tables<'site_settings'>;
+export type SiteContent = Tables<'site_content'>;
+export type BlogPost = Tables<'blog_posts'>;
 
 export type ServiceWithAddons = Service & {
   service_addons: ServiceAddon[];
